@@ -15,10 +15,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if ccaa:
         result = datos[ccaa]
-        
         codigo = 200
 
-        if result == "":
+        if not 'results' in result or len(datos[ccaa]) == 0:
             result = "No hay datos con esa comunidad o no existe"
             codigo = 404
 
