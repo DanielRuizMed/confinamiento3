@@ -19,7 +19,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         if len(result) <= 1:
             result = "No hay datos con esa comunidad o no existe"
-            codigo = 500
+            codigo = 404
 
     else:
         result = "Nos has puesto bien los atributos, ejemplo: ?ccaa=Andalucia."
