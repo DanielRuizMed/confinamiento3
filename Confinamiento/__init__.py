@@ -1,5 +1,5 @@
 import logging
-import json
+import json, sys
 
 import azure.functions as func
 
@@ -17,7 +17,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         result = datos[ccaa]
         codigo = 200
 
-        if not 'results' in result:
+        if len(result) == 0:
             result = "No hay datos con esa comunidad o no existe"
             codigo = 404
 
