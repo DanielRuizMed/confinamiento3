@@ -3,10 +3,10 @@ import json
 
 import azure.functions as func
 
-#json con valores
+# json con valores
 x = '{ "Andalucia":"confinada","Murcia":"confinada","Sevilla":"confinada","Canarias":"no confinada"}'
 
-#transformamos en json
+# transformamos en json
 datos = json.loads(x)
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
