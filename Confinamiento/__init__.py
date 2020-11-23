@@ -14,14 +14,15 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     ccaa = req.params.get('ccaa')
 
     if ccaa:
-        result[ = datos.get(ccaa, 'No hay datos con esa comunidad o no existe')
+        result = datos.get(ccaa, 'No hay datos con esa comunidad o no existe')
         codigo = 200
 
     else:
         result = "Nos has puesto bien los atributos, ejemplo: ?ccaa=Andalucia."
         codigo = 404
 
+    result = {"result"}
     return func.HttpResponse(
-        {"resultado" : result },
+        json.dumps(result),
         status_code=codigo
     )
