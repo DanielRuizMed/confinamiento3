@@ -12,17 +12,17 @@ datos = json.loads(x)
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     ccaa = req.params.get('ccaa')
+    result = {}
 
     if ccaa:
-        result = datos.get(ccaa, 'No hay datos con esa comunidad o no existe')
+        result['result'] = datos.get(ccaa, 'No hay datos con esa comunidad o no existe')
         codigo = 200
 
     else:
-        result = "Nos has puesto bien los atributos, ejemplo: ?ccaa=Andalucia."
+        result['result'] = "Nos has puesto bien los atributos, ejemplo: ?ccaa=Andalucia."
         codigo = 404
 
-    response = json.loads(result)
     return func.HttpResponse(
-        response,
+        result,
         status_code=codigo
     )
