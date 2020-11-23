@@ -21,8 +21,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         result = "Nos has puesto bien los atributos, ejemplo: ?ccaa=Andalucia."
         codigo = 404
 
-    result = {"result"}
+    
     return func.HttpResponse(
-        json.dumps(result),
+        response,
+        mimetype="application/json",
         status_code=codigo
     )
